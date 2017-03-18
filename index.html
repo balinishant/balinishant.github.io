@@ -1,81 +1,110 @@
 <!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Basic Bootstrap Template</title>
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-    <!-- Optional Bootstrap theme -->
-    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<!-- jQuery library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<!-- Latest compiled JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script>
+        
+        $(document).ready(function(){
+  $('.slide-section').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'')
+    && location.hostname == this.hostname) {
+      var $target = $(this.hash);
+      $target = $target.length && $target
+      || $('[name=' + this.hash.slice(1) +']');
+      if ($target.length) {
+        var targetOffset = $target.offset().top;
+        $('html,body')
+        .animate({scrollTop: targetOffset}, 1000);
+       return false;
+      }
+    }
+  });
+});
+</script>
+  <style>
+  body {
+      position: relative; 
+  }
+  #about-me {padding-top:50px;height:500px;color: #fff; background-color: #1E88E5;}
+  #tech-w-o {padding-top:50px;height:500px;color: #fff; background-color: #673ab7;}
+  #projects {padding-top:50px;height:500px;color: #fff; background-color: #ff9800;}
+  #gallery {padding-top:50px;height:500px;color: #fff; background-color: darkgoldenrod;}
+  #connect-at {padding-top:50px;height:500px;color: #fff; background-color: #009688;}
+  </style>
 </head>
-<body>
-<div class="row">
-    <h1 class="col-sm-2">Hello, world!</h1>
-    <h1 class="col-sm-2">      </h1>
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+        
+      
+      <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>                        
+          </button>
+          <div>
+          <a class="navbar-brand" href="#">Welcome to Nishant's Page</a>
+          </div>
+        </div>
+    
+      
+      <div>
+      <div class="collapse navbar-collapse navbar-right" id="myNavbar">
+        <ul class="nav navbar-nav">
+            
+          <li><a href="#about-me" class="slide-section">ABOUT ME</a></li>
+          <li><a href="#tech-w-o" class="slide-section">TECHNOLOGIES</a></li>
+          <li><a href="#projects" class="slide-section">PROJECTS</a></li>
+          <li><a href="#gallery" class="slide-section">GALLERY</a></li>
+          <li><a href="#connect-at" class="slide-section">CONNECT</a></li>
+          </ul>
+       </div>
+    </div>
+      
+      
+  </div>
+    
+    
+</nav>    
+<div id="about-me" class="container-fluid">
+  <h1 class="container content-section text-center">About Me</h1>
+  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
 </div>
-<div class="row">
-    <h1 class="col-sm-2">    </h1>
-    <h1 class="col-sm-2">this is working</h1>
+<div id="tech-w-o" class="container-fluid">
+  <h1 class="container content-section text-center">Technologies Worked On</h1>
+  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
 </div>
-<p>The <abbr title="World Health Organization">WHO</abbr> was founded in 1948.</p>
- <!-- <div class="table-responsive"> -->
-<table class="table" >
-    <thead>
-      <tr>
-        <th>Firstname</th>
-        <th>Lastname</th>
-        <th>Email</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>John</td>
-        <td>Doe</td>
-        <td>john@example.com</td>
-      </tr>
-      <tr>
-        <td>Mary</td>
-        <td>Moe</td>
-        <td>mary@example.com</td>
-      </tr>
-      <tr>
-        <td>July</td>
-        <td>Dooley</td>
-        <td>july@example.com</td>
-      </tr>
-    </tbody>
-  </table>
-<!-- </div> -->
-<div class="container">
-  <h2>Alerts</h2>
-  <p>The a element with class="close" and data-dismiss="alert" is used to close the alert box.</p>
-  <p>The alert-dismissible class adds some extra padding to the close button.</p>
-  <div class="alert alert-success alert-dismissable">
-    <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
-    <strong>Success!</strong> This alert box could indicate a successful or positive action.
-  </div>
-  <div class="alert alert-info alert-dismissable">
-    <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
-    <strong>Info!</strong> This alert box could indicate a neutral informative change or action.
-  </div>
-  <div class="alert alert-warning alert-dismissable">
-    <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
-    <strong>Warning!</strong> This alert box could indicate a warning that might need attention.
-  </div>
-  <div class="alert alert-danger alert-dismissable">
-    <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
-    <strong>Danger!</strong> This alert box could indicate a dangerous or potentially negative action.
-  </div>
-<div class="container">
-  <button type="button" class="btn btn-default">Default</button>
-<div>
+<div id="projects" class="container-fluid">
+    <h1 class="container content-section text-center">Projects</h1>
+  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+</div>
+<div id="gallery" class="container-fluid">
+  <h1 class="container content-section text-center">Gallery</h1>
+  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+</div>
+<div id="connect-at" class="container-fluid">
+  <h1 class="container content-section text-center">Connect @</h1>
+  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+</div>
+
 </body>
 </html>
+
