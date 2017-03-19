@@ -1,8 +1,8 @@
-// Contact Form Scripts
+// connect Form Scripts
 
 $(function() {
 
-    $("#contactForm input,#contactForm textarea").jqBootstrapValidation({
+    $("#connectForm input,#connectForm textarea").jqBootstrapValidation({
         preventSubmit: true,
         submitError: function($form, event, errors) {
             // additional error messages or events
@@ -20,7 +20,7 @@ $(function() {
                 firstName = name.split(' ').slice(0, -1).join(' ');
             }
             $.ajax({
-                url: "././mail/contact_me.php",
+                url: "././mail/connect_me.php",
                 type: "POST",
                 data: {
                     name: name,
@@ -40,7 +40,7 @@ $(function() {
                         .append('</div>');
 
                     //clear all fields
-                    $('#contactForm').trigger("reset");
+                    $('#connectForm').trigger("reset");
                 },
                 error: function() {
                     // Fail message
@@ -50,7 +50,7 @@ $(function() {
                     $('#success > .alert-danger').append($("<strong>").text("Sorry " + firstName + ", it seems that my mail server is not responding. Please try again later!"));
                     $('#success > .alert-danger').append('</div>');
                     //clear all fields
-                    $('#contactForm').trigger("reset");
+                    $('#connectForm').trigger("reset");
                 },
             });
         },
